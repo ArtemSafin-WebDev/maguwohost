@@ -1,0 +1,136 @@
+.main-nav {
+  display: flex;
+  min-height: 147px;
+  align-items: center;
+  @include container();
+  @media screen and (max-width: $laptop-width) {
+    flex-wrap: wrap;
+    min-height: 80px;
+  }
+  &__overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(black, .5);
+    z-index: 99000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s;
+    -webkit-tap-highlight-color: transparent;
+    @media screen and (max-width: $mobile-width) {
+      &.shown {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+    flex-grow: 1;
+    align-items: center;
+    padding-top: 12px;
+    padding-right: 32px;
+    @media screen and (max-width: $laptop-width) {
+      width: 50%;
+      padding: 0;
+    }
+    @media screen and (max-width: $mobile-width) {
+      position: fixed;
+      width: 80%;
+      height: 100%;
+      background-color: white;
+      top: 0;
+      right: 100%;
+      z-index: 100000;
+      flex-direction: column;
+      justify-content: initial;
+      align-items: initial;
+      flex-grow: initial;
+      transition: transform 0.3s ease-out;
+
+      &.shown {
+        transform: translate3d(100%, 0, 0);
+      }
+    }
+    &-item {
+      @media screen and (max-width: $mobile-width) {
+        &:first-child {
+          margin-top: auto;
+        }
+        &:last-child {
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+  &__link {
+    transition: .2s;
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    @media screen and (max-width: $mobile-width) {
+      font-size: 28px;
+      line-height: 1.6;
+      text-align: center;
+    }
+    &:link,
+    &:visited {
+      color: $secondary-color;
+    }
+    &:focus,
+    &:hover {
+      outline: none;
+      &:not(.active) {
+        border: 1px solid $primary-color;
+        @media screen and (max-width: $mobile-width) {
+          -webkit-tap-highlight-color: transparent;
+          background-color: $primary-color;
+        }
+      }
+    }
+
+    &.active {
+      color: $primary-color;
+      font-weight: bold;
+    }
+  }
+  &__menu-open {
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $secondary-color;
+    display: none;
+    margin-left: auto;
+    outline: none;
+    @media screen and (max-width: $mobile-width) {
+      display: flex;
+    }
+    &::before {
+      content: "";
+      width: 28px;
+      height: 3px;
+      background-color: currentColor;
+      box-shadow: 0px 8px 0px currentColor, 0px -8px 0px currentColor;
+      transition: all 0.2s;
+    }
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}

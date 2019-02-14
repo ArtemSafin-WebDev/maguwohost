@@ -1,0 +1,113 @@
+.about-us {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 794px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: $secondary-color;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(#2f2f2f, 0.33),
+      rgba(#2f2f2f, 0.33)
+    ),
+    url("../assets/background-check-domen.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  color: white;
+  text-align: center;
+  @media (min-resolution: $dpi), (min-resolution: $dppx) {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(#2f2f2f, 0.33),
+        rgba(#2f2f2f, 0.33)
+      ),
+      url("../assets/background-check-domen@2x.jpg");
+  }
+  @media screen and (max-width: $laptop-width) {
+    height: 694px;
+  }
+  @media screen and (max-width: $mobile-width) {
+    height: 630px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 72px;
+    width: 100%;
+    will-change: transform, opacity;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    @media screen and (max-width: $laptop-width) {
+      margin-top: 0px;
+    }
+  }
+  &__heading {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    @media screen and (max-width: $tablet-width) {
+      font-size: 42px;
+    }
+    @media screen and (max-width: $mobile-width) {
+      font-size: 36px;
+    }
+  }
+
+  &__benefits {
+    display: flex;
+    margin-bottom: 49px;
+  }
+  &__benefit {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: $mobile-width) {
+      font-size: 18px;
+    }
+    &::before {
+      content: "-";
+      margin: 0 16px;
+    }
+    &:first-of-type {
+      &::before {
+        display: none;
+      }
+    }
+  }
+  &__icon {
+    fill: white;
+    display: block;
+    width: 102px;
+    height: 110px;
+    margin: 0 auto;
+    margin-bottom: 61px;
+    @media screen and (max-width: $mobile-width) {
+      display: none;
+    }
+  }
+}
+
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 20%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

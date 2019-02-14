@@ -1,0 +1,21 @@
+.logo {
+  display: flex;
+  align-items: center;
+  width: 230px;
+  padding-top: 8px;
+  flex-shrink: 0;
+  @media screen and (max-width: $laptop-width) {
+    padding-top: 0;
+  }
+  &__image {
+    width: 33px;
+    height: 33px;
+    display: block;
+    margin-right: 15px;
+  }
+  &__name {
+    font-size: 27px;
+    line-height: 30px;
+    font-weight: bold;
+  }
+}

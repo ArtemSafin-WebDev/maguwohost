@@ -1,0 +1,219 @@
+.clients {
+  @include container-lg();
+  padding-top: 74px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #adadad;
+  @media screen and (max-width: $mobile-width) {
+    padding-top: 40px;
+  }
+  &__intro {
+    width: 31.2%;
+    margin-right: 28px;
+    @media screen and (max-width: $tablet-width) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__heading {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: $secondary-color;
+    margin-bottom: 9px;
+  }
+
+  &__paragraph {
+    padding-right: 47px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 28px;
+  }
+
+  &__companies-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    flex-grow: 1;
+    @media screen and (max-width: $tablet-width) {
+      width: 100%;
+    }
+    &-item {
+      flex-shrink: 0;
+      width: calc((100% - (28px * 3)) / 4);
+      margin-right: 28px;
+      background-color: #f9f9f9;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: radial-gradient(
+        circle at center,
+        white 0%,
+        #f9f9f9 100%
+      );
+      padding-top: 15%;
+      position: relative;
+      margin-bottom: 28px;
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+      @media screen and (max-width: $tablet-width) {
+        width: calc((100% - (28px * 1)) / 2);
+        padding-top: 27%;
+        &:nth-child(4n) {
+          margin-right: 28px;
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      @media screen and (max-width: $mobile-width) {
+        width: calc((100% - (14px * 1)) / 2);
+        padding-top: 27%;
+        margin-right: 14px;
+        margin-bottom: 14px;
+        &:nth-child(4n) {
+          margin-right: 14px;
+        }
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+      }
+      
+    }
+  }
+  &__companies-logo-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  &__companies-logo {
+    display: block;
+    height: auto;
+    width: auto;
+    transition: filter 0.3s;
+    margin: auto;
+    max-height: 80%;
+    @media screen and (max-width: $tablet-width) {
+      max-height: 60%;
+    }
+    &:hover {
+      filter: grayscale(100%);
+    }
+  }
+  &__people-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 34px;
+    @media screen and (max-width: $laptop-width) {
+      margin-top: 0px;
+    }
+    @media screen and (max-width: $mobile-width) {
+      display: block;
+      margin-top: 0;
+    }
+    .slick-slide {
+      outline: none;
+    }
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      li {
+        width: auto;
+        height: auto;
+        margin-left: 0;
+        margin-right: 15px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      button {
+        width: 12px;
+        height: 12px;
+        background-color: #dbdbdb;
+        border: 4px solid #dbdbdb;
+        border-radius: 50%;
+        transition: background-color .2s;
+        &::before {
+          display: none;
+        }
+      }
+      li.slick-active button {
+        background-color: $secondary-color;
+      }
+    }
+    &-item {
+      width: calc((100% - (28px * 2)) / 3);
+      flex-shrink: 0;
+      margin-right: 28px;
+      background-color: #faf9f9;
+      padding: 30px;
+      padding-top: 24px;
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 72px;
+      outline: none;
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+      @media screen and (max-width: $tablet-width) {
+        width: calc((100% - (28px * 1)) / 2);
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        &:nth-child(3n) {
+          margin-right: 28px;
+        }
+      }
+      @media screen and (max-width: $mobile-width) {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 72px;
+        &:nth-child(2n) {
+          margin-right: 0;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  &__people-review {
+    font-size: 14px;
+    font-style: italic;
+    line-height: 24px;
+    margin-bottom: 14px;
+    width: 100%;
+  }
+  &__people-name {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #696969;
+    padding-left: 7px;
+  }
+  &__people-image-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #e2e1e5;
+    position: absolute;
+    right: 22px;
+    bottom: -43px;
+  }
+  &__people-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

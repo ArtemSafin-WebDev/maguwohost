@@ -1,0 +1,240 @@
+.check-domain {
+  background-color: rgba(white, 0.5);
+  padding: 18px;
+  width: 572px;
+  @media screen and (max-width: $mobile-width) {
+    width: 80%;
+  }
+  @media screen and (max-width: $mobile-small-width) {
+    width: 100%;
+  }
+  &__form {
+    width: 100%;
+    display: flex;
+    position: relative;
+    @media screen and (max-width: $mobile-width) {
+      flex-wrap: wrap;
+    }
+    .parsley-errors-list.filled {
+      background-color: $primary-color;
+      position: absolute;
+      font-size: 18px;
+      line-height: 1.6;
+      padding: 10px 18px;
+      color: $secondary-color;
+      top: calc(100% + 12px);
+      font-weight: bold;
+      text-align: left;
+      @media screen and (max-width: $mobile-width) {
+        background-color: $secondary-color;
+        color: $primary-color;
+        color: white;
+      }
+      &::before {
+        content: '';
+        bottom: 100%;
+        left: 15px;
+        border: 12px solid transparent;
+        position: absolute;
+        border-bottom: 10px solid $primary-color;
+        @media screen and (max-width: $mobile-width) {
+          border-bottom: 10px solid $secondary-color;
+        }
+      }
+    }
+  }
+  &__input-wrapper {
+    display: flex;
+    position: relative;
+    flex-grow: 1;
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+    }
+  }
+  &__input {
+    font: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: white;
+    padding: 15px 22px;
+    border: none;
+    -webkit-appearance: none;
+    width: 30%;
+    flex-grow: 1;
+    border-radius: 0;
+    transition: border 0.2s;
+    border: 2px solid transparent;
+    outline: none;
+    @media screen and (max-width: $mobile-width) {
+      font-size: 16px;
+      line-height: 18px;
+      width: 40%;
+    }
+    @media screen and (max-width: $mobile-small-width) {
+      padding: 15px 10px;
+    }
+    &.parsley-error {
+      border: 2px solid $primary-color;
+    }
+    &::placeholder {
+      color: $secondary-color;
+    }
+    &::-moz-placeholder {
+      color: $secondary-color;
+    }
+    &:focus {
+      border: 2px solid $primary-color;
+    }
+  }
+  &__submit-button {
+    background-color: $primary-color;
+    border: none;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    color: $secondary-color;
+    padding: 13px 17px;
+    cursor: pointer;
+    transition: all .3s;
+    white-space: nowrap;
+    border: 2px solid $primary-color;
+    border-left: 2px solid white;
+    &:focus {
+      border: 2px solid $secondary-color;
+      outline: none;
+    }
+    &:hover {
+      border: 2px solid $secondary-color;
+      background-color: $secondary-color;
+      color: white;
+    }
+    @media screen and (max-width: $mobile-width) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+    @media screen and (max-width: $mobile-width) {
+      flex-basis: 100%;
+      border: none;
+      border: 2px solid $primary-color;
+      margin-top: 20px;
+      background-color: $primary-color;
+      color: white;
+      font-size: 16px;
+      padding: 13px 17px;
+    }
+  }
+
+  .choices {
+    margin-bottom: 0;
+    color: $secondary-color;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+
+    &:focus .choices__inner {
+      border: 2px solid $secondary-color;
+    }
+  }
+
+  .is-focused .choices__inner,
+  .is-open .choices__inner {
+    border-color: $primary-color;
+  }
+
+  .choices[data-type*='select-one'] .choices__inner {
+    padding-bottom: 0px;
+  }
+
+  .choices__inner {
+    flex-grow: 1;
+    border: none;
+    border-radius: 0px;
+    background-color: $primary-color;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 0 24px;
+    border: 2px solid $primary-color;
+    @media screen and (max-width: $mobile-width) {
+      font-size: 16px;
+      line-height: 18px;
+      padding: 0 15px;
+    }
+    @media screen and (max-width: $mobile-small-width) {
+      padding: 0 10px;
+    }
+  }
+
+  .choices[data-type*='select-one'] .choices__input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    background-color: rgba(#f2f2f2, 0.3);
+  }
+
+  .choices__list--single {
+    display: flex;
+    padding: 0;
+    padding-right: 18px;
+    width: 100%;
+    @media screen and (max-width: $mobile-width) {
+      padding-right: 25px;
+    }
+  }
+
+  .choices__list--dropdown {
+    background-color: #fff;
+
+    border: 1px solid #f2f2f2;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .choices[data-type*='select-one']::after {
+    border: none;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctitle%3Edown-arrow%3C/title%3E%3Cpath fill='%23202242' d='M30.090 8.583c-0.397-0.397-1.042-0.397-1.439 0l-12.651 12.676-12.676-12.676c-0.397-0.397-1.042-0.397-1.439 0s-0.397 1.042 0 1.439l13.371 13.371c0.198 0.198 0.447 0.298 0.719 0.298 0.248 0 0.521-0.099 0.719-0.298l13.371-13.371c0.422-0.397 0.422-1.042 0.025-1.439z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 0px;
+    transform: translate3d(0, -50%, 0);
+    transition: transform 0.2s;
+    right: 14px;
+  }
+
+  .choices[data-type*='select-one'].is-open::after {
+    margin-top: 0;
+    transform: translate3d(0, -50%, 0) rotate(180deg);
+  }
+
+  .is-open .choices__list--dropdown {
+    border-color: #f2f2f2;
+  }
+
+  .choices__list--dropdown .choices__item {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    @media screen and (max-width: $mobile-width) {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: #f2f2f2;
+    // background-color: $primary-color;
+  }
+}
