@@ -97,7 +97,7 @@
     color: $secondary-color;
     padding: 13px 17px;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
     white-space: nowrap;
     border: 2px solid $primary-color;
     border-left: 2px solid white;
@@ -168,6 +168,18 @@
     }
     @media screen and (max-width: $mobile-small-width) {
       padding: 0 10px;
+    }
+
+    select {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      white-space: nowrap;
     }
   }
 
