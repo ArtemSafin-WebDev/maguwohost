@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "body-scroll-lock": "^2.6.1",
